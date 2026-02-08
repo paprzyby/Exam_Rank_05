@@ -1,6 +1,8 @@
 #ifndef BIGINT_HPP
 # define BIGINT_HPP
 
+# include <iostream>
+
 class bigint
 {
     public:
@@ -8,9 +10,13 @@ class bigint
         bigint(const unsigned int i);
         bigint(const bigint &other);
         ~bigint();
+
+        bigint operator +(const bigint &other) const;
     
     public:
-        const unsigned int num;
+        std::string str;
 };
+
+std::ostream &operator<<(std::ostream &output, const bigint &obj);
 
 #endif

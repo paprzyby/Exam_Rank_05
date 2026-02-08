@@ -10,13 +10,13 @@ int main()
     (void)b;
     (void)c;
     (void)d;
-    // std::cout << "a = " << a << std::endl;
-    // std::cout << "b = " << b << std::endl;
-    // std::cout << "c = " << c << std::endl;
-    // std::cout << "d = " << d << std::endl;
-    // std::cout << "e = " << e << std::endl;
+    std::cout << "a = " << a << std::endl;
+    std::cout << "b = " << b << std::endl;
+    std::cout << "c = " << c << std::endl;
+    std::cout << "d = " << d << std::endl;
+    std::cout << "e = " << e << std::endl;
 
-    // std::cout << "a + b = " << a + b << std::endl;
+    std::cout << "a + b = " << a + b << std::endl;
     // std::cout << "(c += a) = " << (c += a) << std::endl;
 
     // std::cout << "b = " << b << std::endl;

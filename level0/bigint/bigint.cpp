@@ -1,16 +1,16 @@
 #include "bigint.hpp"
 
-bigint::bigint() : num(0)
+bigint::bigint() : str("0")
 {
 
 }
 
-bigint::bigint(const unsigned int i) : num(i)
+bigint::bigint(const unsigned int i) : str(std::to_string(i))
 {
 
 }
 
-bigint::bigint(const bigint &other) : num(other.num)
+bigint::bigint(const bigint &other) : str(other.str)
 {
 
 }
@@ -18,4 +18,18 @@ bigint::bigint(const bigint &other) : num(other.num)
 bigint::~bigint()
 {
 
+}
+
+bigint bigint::operator+(const bigint &other) const
+{
+    bigint result = bigint();
+
+    result.str = std::to_string(std::stoul(this->str) + std::stoul(other.str));
+    return (result);
+}
+
+std::ostream &operator<<(std::ostream &output, const bigint &obj)
+{
+    output << obj.str;
+    return (output);
 }
