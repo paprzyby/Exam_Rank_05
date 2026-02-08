@@ -28,6 +28,12 @@ bigint bigint::operator+(const bigint &other) const
     return (result);
 }
 
+bigint bigint::operator+=(const bigint &other)
+{
+    this->str = std::to_string(std::stoul(this->str) + std::stoul(other.str));
+    return (*this);
+}
+
 std::ostream &operator<<(std::ostream &output, const bigint &obj)
 {
     output << obj.str;

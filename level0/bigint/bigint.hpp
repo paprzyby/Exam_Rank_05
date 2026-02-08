@@ -12,6 +12,7 @@ class bigint
         ~bigint();
 
         bigint operator +(const bigint &other) const;
+        bigint operator +=(const bigint &other);
     
     public:
         std::string str;
