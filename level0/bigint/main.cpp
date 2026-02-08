@@ -33,3 +33,5 @@ int main()
     std::cout << "(d == a) = " << (d == a) << std::endl;
     std::cout << "(d != a) = " << (d != a) << std::endl;
 }
+
+// https://github.com/fbkeskin/42-exam-rank-05
