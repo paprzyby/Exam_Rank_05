@@ -10,13 +10,13 @@ int main()
 
     std::cout << "v1: " << v1 << std::endl;
     std::cout << "v1: " << "{" << v1[0] << ", " << v1[1] << "}" << std::endl;
-    // std::cout << "v2: " << v2 << std::endl;
-    // std::cout << "v3: " << v3 << std::endl;
-    // std::cout << "v4: " << v4 << std::endl;
-    // std::cout << v4++ << std::endl; // 2, 3
-    // std::cout << ++v4 << std::endl; // 3, 4
-    // std::cout << v4-- << std::endl; // 2, 3
-    // std::cout << --v4 << std::endl; // 1, 2
+    std::cout << "v2: " << v2 << std::endl;
+    std::cout << "v3: " << v3 << std::endl;
+    std::cout << "v4: " << v4 << std::endl;
+    std::cout << v4++ << std::endl; // 2, 3
+    std::cout << ++v4 << std::endl; // 3, 4
+    std::cout << v4-- << std::endl; // 2, 3
+    std::cout << --v4 << std::endl; // 1, 2
     // v2 += v3; // 2, 4
     // v1 -= v2; // -2, -4
     // v2 = v3 + v3 *2; // 3, 6

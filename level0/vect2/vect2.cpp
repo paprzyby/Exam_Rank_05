@@ -50,6 +50,36 @@ int vect2::operator[](int i)
     return (0);
 }
 
+vect2 &vect2::operator++(int)
+{
+    this->_n1++;
+    this->_n2++;
+    return (*this);
+}
+
+vect2 vect2::operator++()
+{
+    vect2 tmp = *this;
+    this->_n1++;
+    this->_n2++;
+    return (tmp);
+}
+
+vect2 &vect2::operator--(int)
+{
+    this->_n1--;
+    this->_n2--;
+    return (*this);
+}
+
+vect2 vect2::operator--()
+{
+    vect2 tmp = *this;
+    this->_n1--;
+    this->_n2--;
+    return (tmp);
+}
+
 std::ostream &operator<<(std::ostream &os, const vect2 &v)
 {
     std::cout << "{" << v[0] << ", " << v[1] << "}";

@@ -14,6 +14,10 @@ class   vect2
         vect2 operator=(vect2 &other);
         int operator[](int i) const;
         int operator[](int i);
+        vect2 &operator++(int);
+        vect2 operator++();
+        vect2 &operator--(int);
+        vect2 operator--();
 
     private:
         int _n1;
