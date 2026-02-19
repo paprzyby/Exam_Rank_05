@@ -75,10 +75,53 @@ vect2 &vect2::operator--(int)
 vect2 vect2::operator--()
 {
     vect2 tmp = *this;
+
     this->_n1--;
     this->_n2--;
     return (tmp);
 }
+
+vect2 &vect2::operator+=(const vect2 &other)
+{
+    this->_n1 += other._n1;
+    this->_n2 += other._n2;
+    return (*this);
+}
+
+vect2 vect2::operator*(int num) const
+{
+    vect2 tmp;
+
+    tmp._n1 = this->_n1;
+    tmp._n2 = this->_n2;
+    tmp._n1 *= num;
+    tmp._n2 *= num;
+}
+
+vect2 vect2::operator+(const vect2 &other) const
+{
+    vect2 tmp;
+
+    tmp._n1 = this->_n1 + other._n1;
+    tmp._n2 = this->_n2 + other._n2;
+    return (tmp);
+}
+
+vect2 &vect2::operator=(const vect2 &other)
+{
+    this->_n1 = other._n1;
+    this->_n2 = other._n2;
+    return (*this);
+}
+
+vect2 operator*(const int num, vect2 &other)
+{
+    vect2 tmp(other);
+
+    tmp *= num;
+    return (tmp);
+}
+
 
 std::ostream &operator<<(std::ostream &os, const vect2 &v)
 {
