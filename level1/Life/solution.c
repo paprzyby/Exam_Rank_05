@@ -44,7 +44,7 @@ int main(int argc, char **argv)
         else if (c == 'x')
             pen = !pen;
 
-        if (pen)
+        if (pen == 1)
             board[y][x] = 1;
     }
 
