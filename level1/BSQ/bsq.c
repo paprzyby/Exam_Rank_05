@@ -137,7 +137,7 @@ void	bsq(FILE *file, int sep)
 			else
 			{
 				top = dp[(rows - 1) * width + cols];
-				left = dp[(cols - 1) + width * rows];
+				left = dp[rows * width + (cols - 1)];
 				diagonal = dp[(rows - 1) * width + (cols - 1)];
 				value = 1 + min3(top, left, diagonal);
 			}
