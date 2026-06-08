@@ -82,7 +82,7 @@ void	bsq(FILE *file, int sep)
 				fprintf(stdout, "\n");
 			return ;
 		}
-		line[--len] = '\0';
+		line[--len] = '\0'; //needs to be here
 		if (width == -1)
 			width = (int)len;
 		else if ((int)len != width || width == 0)
