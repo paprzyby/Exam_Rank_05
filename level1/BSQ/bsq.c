@@ -37,14 +37,6 @@ void	bsq(FILE *file, int sep)
 {
 	int	line_count = 0;
 	char	empty, obstacle, full;
-	char	**map = NULL;
-	char	*line = NULL;
-	size_t	capacity = 0;
-	ssize_t	len = 0;
-	int	width = 0;
-	int	rows = 0;
-	int	cols = 0;
-	int	*dp = NULL;
 
 	if (fscanf(file, "%d %c %c %c\n", &line_count, &empty, &obstacle, &full) != 4
 		|| line_count <= 0
@@ -57,6 +49,8 @@ void	bsq(FILE *file, int sep)
 		return ;
 	}
 
+	char	**map = NULL;
+
 	map = calloc(line_count, sizeof(char *));
 	if (!map)
 	{
@@ -66,7 +60,14 @@ void	bsq(FILE *file, int sep)
 		return ;
 	}
 
-	width = -1;
+		char	*line = NULL;
+
+	size_t	capacity = 0;
+	ssize_t	len = 0;
+	int	width = -1;
+	int	rows = 0;
+	int	cols = 0;
+
 	while (rows < line_count)
 	{
 		line = NULL;
@@ -110,6 +111,8 @@ void	bsq(FILE *file, int sep)
 		map[rows] = line;
 		rows++;
 	}
+
+	int	*dp = NULL;
 
 	dp = calloc(line_count * width, sizeof(int));
 	if (!dp)
@@ -186,12 +189,10 @@ int main(int ac, char **av)
 		bsq(stdin, 0);
 		return (0);
 	}
-
-	FILE *file;
-	int	i = 1;
-	while (i < ac)
+	else if (ac == 2)
 	{
-		file = fopen(av[i], "r");
+		FILE *file;
+		file = fopen(av[1], "r");
 		if (!file)
 		{
 			fprintf(stderr, "map error\n");
@@ -203,8 +204,6 @@ int main(int ac, char **av)
 			bsq(file, ac > 2);
 			fclose(file);
 		}
-		i++;
 	}
 	return (0);
 }
-

@@ -54,7 +54,7 @@ int main(int ac, char **av)
             {
                 int den = 0;
                 int yy = -1;
-                while (yy <= 1) // "yy" instead of "y"
+                while (yy <= 1)
                 {
                     int xx = -1;
                     while (xx <= 1)
